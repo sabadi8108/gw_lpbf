@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-low": "#181c24", "primary-fixed-dim": "#00dbe9", "inverse-on-surface": "#2c3039", "tertiary-fixed-dim": "#ffb3ad", "primary": "#dbfcff", "on-error-container": "#ffdad6", "tertiary-fixed": "#ffdad7", "primary-fixed": "#7df4ff", "on-secondary-container": "#5b3800", "error": "#ffb4ab", "on-background": "#dfe2ee", "surface-variant": "#31353e", "inverse-surface": "#dfe2ee", "secondary-fixed-dim": "#ffb95f", "outline": "#849495", "error-container": "#93000a", "surface-tint": "#00dbe9", "primary-container": "#00f0ff", "on-secondary-fixed": "#2a1700", "on-tertiary-container": "#ba1b24", "on-tertiary-fixed": "#410004", "surface-container": "#1c2028", "on-error": "#690005", "surface-dim": "#0f131c", "secondary-container": "#ee9800", "on-secondary": "#472a00", "surface-container-lowest": "#0a0e16", "on-surface": "#dfe2ee", "surface-bright": "#353942", "on-surface-variant": "#b9cacb", "surface-container-high": "#262a33", "on-secondary-fixed-variant": "#653e00", "on-primary-fixed": "#002022", "outline-variant": "#3b494b", "on-tertiary": "#68000a", "on-primary-container": "#006970", "inverse-primary": "#006970", "secondary-fixed": "#ffddb8", "on-primary": "#00363a", "background": "#0f131c", "secondary": "#ffb95f", "tertiary-container": "#ffceca", "surface": "#0f131c", "surface-container-highest": "#31353e", "on-tertiary-fixed-variant": "#930013", "tertiary": "#fff3f2", "on-primary-fixed-variant": "#004f54" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xl": "1.5rem", "gutter": "0.75rem", "gutter-lg": "1rem", "space-md": "0.75rem", "space-lg": "1rem", "margin-lg": "1.5rem", "space-sm": "0.5rem", "margin": "1rem", "space-xs": "0.25rem" }, "fontFamily": { "body-lg": [ "Inter" ], "body-sm": [ "Inter" ], "label-lg": [ "JetBrains Mono" ], "headline-lg-mobile": [ "Inter" ], "headline-xl": [ "Inter" ], "label-md": [ "JetBrains Mono" ], "headline-lg": [ "Inter" ], "label-sm": [ "JetBrains Mono" ], "headline-xl-mobile": [ "Inter" ], "body-md": [ "Inter" ], "code-data": [ "JetBrains Mono" ], "headline-md": [ "Inter" ] }, "fontSize": { "body-lg": [ "16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" } ], "body-sm": [ "12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" } ], "label-lg": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500" } ], "headline-lg-mobile": [ "20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "headline-xl": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" } ], "headline-lg": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "label-sm": [ "10px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "500" } ], "headline-xl-mobile": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "body-md": [ "14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" } ], "code-data": [ "12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" } ], "headline-md": [ "18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" } ] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)] z-50"><div class="h-16 w-full px-gutter-lg flex items-center justify-between"><div class="flex items-center gap-space-lg"><img alt="LPBF Vision AI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W4snPdVaadEkSSjnPNr6MdsX6eIpPx3eY2zimOJ3UUhsI11crKASx_wiMzvpZYPCRiulnhttBfgLSL0n5LkyzMRIqRh8KvOTFXbgHWVH0CovTvfNX5aDV9aLM08-agc1dc-L7b6ODMfbFBhOkuWw9fIui_NCM54LnA_Tul-zJiSiYiwfh68zYDUJcukdGPNDQlvaEn-Bq-u1Vt5wATFFCyhLEa4WIBMsznDoUPa1KB0DdR3bPHD0yM"/><div class="flex flex-col"><span class="font-headline-md text-headline-md tracking-tight text-primary leading-none">LPBF-VISION AI</span><span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase mt-space-xs">금속 3D 프린팅 결함 분석 코어</span></div><div class="hidden xl:flex items-center gap-space-xs ml-space-md pl-space-md bg-surface-container-low px-space-md py-space-xs rounded"><span class="h-2 w-2 rounded-full bg-primary-container animate-pulse"></span><span class="font-label-md text-label-md text-primary font-bold">CHAMBER-01</span><span class="font-body-sm text-body-sm text-on-surface-variant">실시간 분석 가동 중 (ONLINE)</span></div></div><nav class="hidden lg:flex items-center gap-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-bold"><a aria-current="page" class="px-space-md py-space-xs rounded transition-colors bg-primary-container text-on-primary-container font-bold" data-path="live-detection" href="#">실시간 결함 진단</a><a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md px-space-md py-space-xs rounded transition-colors" data-path="layer-inspector" href="#">레이어별 이미지 검사</a><a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md px-space-md py-space-xs rounded transition-colors" data-path="diagnosis-report" href="#">AI 진단 리포트</a><a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md px-space-md py-space-xs rounded transition-colors" data-path="defect-logs" href="#">결함 통계 및 로그</a><a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md px-space-md py-space-xs rounded transition-colors" data-path="model-settings" href="#">모델 파라미터 설정</a></nav><div class="flex items-center gap-space-md"><div class="hidden 2xl:flex items-center gap-space-lg bg-surface-container px-space-md py-space-xs rounded"><div class="flex items-center gap-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant">챔버 압력(Ar):</span><span class="font-label-md text-label-md text-primary-fixed">0.04 mbar</span></div><div class="flex items-center gap-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant">광학 센서:</span><span class="font-label-md text-label-md text-primary">NOMINAL (99.8%)</span></div></div><div class="flex items-center gap-space-sm pl-space-sm"><div class="hidden sm:flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface font-medium">수석 품질관리 엔지니어</span><span class="font-label-sm text-label-sm text-secondary-fixed-dim">권한: ADMIN / L4</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface-container-lowest z-40 flex flex-col justify-between py-space-md shadow-[0_1px_8px_rgba(0,0,0,0.3)]"><div class="flex flex-col gap-space-xs px-space-sm"><div class="px-space-md py-space-xs font-label-sm text-label-sm text-outline uppercase tracking-wider">진단 탐색기</div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-bold"><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm rounded transition-colors bg-primary-container text-on-primary-container font-bold" data-path="live-detection" href="#"><span class="material-symbols-outlined text-[18px]">videocam</span><span>실시간 결함 진단</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="layer-inspector" href="#"><span class="material-symbols-outlined text-[18px]">layers</span><span>레이어 검사 뷰어</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="diagnosis-report" href="#"><span class="material-symbols-outlined text-[18px]">analytics</span><span>AI 진단 리포트</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="defect-logs" href="#"><span class="material-symbols-outlined text-[18px]">data_table</span><span>결함 통계 및 로그</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="model-settings" href="#"><span class="material-symbols-outlined text-[18px]">tune</span><span>모델 파라미터 설정</span></a></nav></div><div class="px-space-md flex flex-col gap-space-sm"><div class="p-space-sm bg-surface-container rounded flex flex-col gap-space-xs"><span class="font-label-sm text-label-sm text-outline">하드웨어 동기화</span><div class="flex justify-between items-center"><span class="font-label-md text-label-md text-on-surface">Galvo 스캐너</span><span class="font-label-sm text-label-sm text-primary-fixed">LOCKED</span></div><div class="flex justify-between items-center"><span class="font-label-md text-label-md text-on-surface">용융지 IR 카운트</span><span class="font-label-md text-label-md text-primary-fixed">4,820 Hz</span></div></div><div class="pt-space-xs font-label-sm text-label-sm text-outline-variant text-center">LPBF AGENT OS v4.2.0-STABLE</div></div></aside><div class="pl-64"><main class="w-full pt-16 bg-background min-h-screen"><div class="flex flex-col w-full px-gutter-lg pb-12 gap-space-lg text-on-surface">
+<!-- ================= TOP SECTION: CHAMBER & JOB TELEMETRY ================= -->
+<section class="flex flex-col gap-space-sm">
+<!-- AI Agent System Alert Banner -->
+<div class="relative overflow-hidden bg-error-container/20 rounded p-space-sm sm:p-space-md flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm shadow-md">
+<div class="absolute -left-12 -top-12 w-32 h-32 bg-error/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center gap-space-sm z-10">
+<div class="flex items-center justify-center w-8 h-8 rounded bg-error text-on-error shrink-0 animate-pulse">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-sm text-label-sm uppercase bg-error/30 text-error px-1.5 py-0.5 rounded font-bold tracking-wider">AI AGENT CRITICAL ALERT</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">타임스탬프: 14:38:22.049 KST</span>
+</div>
+<p class="font-body-md text-body-md text-on-error-container font-medium mt-0.5">
+            레이어 <span class="font-label-md text-label-md font-bold text-primary-fixed">#1,428</span>에서 심각도 '주의/위험' 결함 3건 감지됨 — 리코터 칼날 미세 마모 징후 및 레이저 스캔 트랙 볼링(Balling) 포착. 즉각 권장 자율 제어를 검토하십시오.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs z-10 shrink-0 self-end md:self-center">
+<button class="px-space-md py-1 bg-surface-container-highest hover:bg-surface-bright text-on-surface font-label-md text-label-md rounded transition-colors flex items-center gap-1" id="btn-quick-audit">
+<span class="material-symbols-outlined text-[16px] text-secondary">assignment_turned_in</span>
+<span>진단 상세 로그</span>
+</button>
+<button class="px-2 py-1 bg-transparent hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface rounded transition-colors" id="btn-quick-dismiss">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+<!-- Telemetry Strip & Build Phase Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-space-sm">
+<!-- Card 1: Job ID & Spec -->
+<div class="col-span-2 bg-surface-container-low p-space-md rounded flex flex-col justify-between shadow-sm relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">작업 식별자 (Job ID)</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 bg-primary-container/20 text-primary-fixed rounded font-semibold">진행률 51.0%</span>
+</div>
+<div class="mt-space-xs">
+<div class="font-label-lg text-label-lg text-primary font-bold tracking-tight">#LPBF-TI64-BATCH-089</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 flex items-center gap-2">
+<span>재료: <strong class="text-on-surface font-mono">Ti-6Al-4V Grade 23 ELI</strong></span>
+<span>•</span>
+<span>적층 두께: <strong class="text-on-surface font-mono">30 μm</strong></span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary-fixed">layers</span>
+<span class="font-label-sm text-label-sm">레이어: <span class="text-on-surface font-bold font-mono">1,428</span> / 2,800</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary-fixed">straighten</span>
+<span class="font-label-sm text-label-sm">빌드 높이: <span class="text-on-surface font-bold font-mono">42.84 mm</span></span>
+</div>
+</div>
+</div>
+<!-- Card 2: Oxygen Concentration -->
+<div class="bg-surface-container-low p-space-md rounded flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">산소 농도 (O₂)</span>
+<span class="h-2 w-2 rounded-full bg-primary-container"></span>
+</div>
+<div class="my-space-xs">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-lg text-headline-lg font-mono font-bold text-on-surface">38</span>
+<span class="font-label-sm text-label-sm text-outline">ppm</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary-fixed">NOMINAL (&lt;50 ppm)</span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-[38%]"></div>
+</div>
+</div>
+<!-- Card 3: Chamber Pre-heat Temperature -->
+<div class="bg-surface-container-low p-space-md rounded flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">베드 예열 온도 (Bed T)</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">thermostat</span>
+</div>
+<div class="my-space-xs">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-lg text-headline-lg font-mono font-bold text-on-surface">185.2</span>
+<span class="font-label-sm text-label-sm text-outline">°C</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary-fixed">STABLE (목표: 185°C)</span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-[92%]"></div>
+</div>
+</div>
+<!-- Card 4: Argon Shield Flow -->
+<div class="bg-surface-container-low p-space-md rounded flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">아르곤 유량 (Ar Flow)</span>
+<span class="material-symbols-outlined text-[16px] text-primary-fixed">air</span>
+</div>
+<div class="my-space-xs">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-lg text-headline-lg font-mono font-bold text-on-surface">2.40</span>
+<span class="font-label-sm text-label-sm text-outline">L/min</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary-fixed">LAMINAR (정상 층류)</span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-primary-fixed-dim h-full w-[80%]"></div>
+</div>
+</div>
+<!-- Card 5: Laser Power & Status -->
+<div class="bg-surface-container-low p-space-md rounded flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">파이버 레이저 출력</span>
+<span class="material-symbols-outlined text-[16px] text-error">bolt</span>
+</div>
+<div class="my-space-xs">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-lg text-headline-lg font-mono font-bold text-on-surface">280</span>
+<span class="font-label-sm text-label-sm text-outline">W</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">BEAM Ø: 75 μm (Yb-Fiber)</span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-[70%]"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= CENTER WORKBENCH: INSPECTOR & DIAGNOSTICS ================= -->
+<section class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT: Main Powder Bed Vision Layer Inspector (8 cols) -->
+<div class="xl:col-span-8 flex flex-col gap-space-sm bg-surface-container-low p-space-md rounded shadow-xl">
+<!-- Toolbar Header -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="flex h-2.5 w-2.5 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary-container"></span>
+</span>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-primary tracking-tight">레이어 #1,428 표면 광학 검사 뷰어</span>
+<span class="font-label-sm text-label-sm text-outline">고해상도 25MP 산업용 CoaXPress 실시간 동축 카메라 피드 (0.012 mm/px)</span>
+</div>
+</div>
+<!-- Filter & View Mode Controls -->
+<div class="flex items-center gap-space-xs flex-wrap">
+<button class="px-space-sm py-1 rounded bg-primary-container text-on-primary-container font-label-md text-label-md font-bold transition-all shadow-sm flex items-center gap-1" id="toggle-bboxes">
+<span class="material-symbols-outlined text-[16px]">crop_free</span>
+<span>AI 결함 바운딩 박스 ON</span>
+</button>
+<button class="px-space-sm py-1 rounded bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-md text-label-md transition-all flex items-center gap-1" id="toggle-thermal">
+<span class="material-symbols-outlined text-[16px] text-secondary">local_fire_department</span>
+<span>열화상(IR) 모드</span>
+</button>
+<div class="flex items-center bg-surface-container-highest rounded px-1">
+<button class="px-2 py-1 text-primary-fixed font-label-sm text-label-sm font-bold" id="zoom-100">1x</button>
+<button class="px-2 py-1 text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm" id="zoom-200">2x</button>
+<button class="px-2 py-1 text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm" id="zoom-400">4x</button>
+</div>
+</div>
+</div>
+<!-- Main Vision Viewport Canvas Area -->
+<div class="relative w-full aspect-[16/10] bg-surface-container-lowest rounded overflow-hidden select-none group" id="vision-viewport-container">
+<!-- Live Layer Snapshot Image -->
+<img alt="LPBF Powder Bed Surface Layer #1428" class="w-full h-full object-cover transition-transform duration-300 ease-out origin-center" id="layer-feed-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAAmYwzyGpWTAoqmw-9I1HcwulwvI6hossNk0tqcBEH_KU4j-d-1UYkSozA8zs6h0VfXsOcZDxsv4NzsJ7dr7tCEIlxcrC0sx0FBGyixFcgNtocuDVgOAyM8QL0HDdSYmOBPVcJgNJycsP0J3WTxX2ojG1B0vu5wZYbKh8nZ9IlY0pHyDNfOkGEr91C7ZPKA1SMprvlxnDjTFyiLVl0pXP63e3p3GYbGOAqhDX5Ajh9B44GCvY-5s"/>
+<!-- Thermal IR Overlay Gradient Layer (Toggled via JS) -->
+<div class="absolute inset-0 bg-gradient-to-tr from-error/25 via-secondary/15 to-transparent mix-blend-color-dodge opacity-0 pointer-events-none transition-opacity duration-300" id="thermal-ir-overlay"></div>
+<!-- Vector Crosshair Grid Overlay (Industrial Visual Stance) -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none opacity-30 stroke-primary/30" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="60" id="industrial-grid" patternunits="userSpaceOnUse" width="60">
+<path d="M 60 0 L 0 0 0 60" fill="none" stroke="currentColor" stroke-dasharray="2 4" stroke-width="0.5"></path>
+</pattern>
+</defs>
+<rect fill="url(#industrial-grid)" height="100%" width="100%"></rect>
+<!-- Reticle Center -->
+<circle class="stroke-primary/40" cx="50%" cy="50%" fill="none" r="40" stroke-width="0.75"></circle>
+<line class="stroke-primary-container" stroke-width="1" x1="50%" x2="50%" y1="46%" y2="54%"></line>
+<line class="stroke-primary-container" stroke-width="1" x1="48%" x2="52%" y1="50%" y2="50%"></line>
+</svg>
+<!-- Dynamic Overlay: Defect 1 - Balling Effect (Red Alert Box with beacon) -->
+<div class="defect-marker absolute top-[36%] left-[44%] w-[24%] h-[28%] pointer-events-auto cursor-pointer transition-all duration-200" id="bbox-defect-1">
+<!-- Outer alert frame -->
+<div class="relative w-full h-full bg-error/15 rounded-sm">
+<!-- Pulsing beacon at defect core -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+<span class="flex h-4 w-4 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-error opacity-75"></span>
+<span class="relative inline-flex rounded-full h-4 w-4 bg-error"></span>
+</span>
+</div>
+<!-- Bounding Box Corners -->
+<span class="absolute -top-1 -left-1 w-2.5 h-2.5 bg-error"></span>
+<span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-error"></span>
+<span class="absolute -bottom-1 -left-1 w-2.5 h-2.5 bg-error"></span>
+<span class="absolute -bottom-1 -right-1 w-2.5 h-2.5 bg-error"></span>
+<!-- Monospace Label Tag -->
+<div class="absolute -top-7 left-0 bg-surface-container-lowest/90 backdrop-blur-md px-2 py-0.5 rounded flex items-center gap-1 shadow-md">
+<span class="h-2 w-2 rounded-full bg-error animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-error font-bold font-mono">#01 볼링 (Balling): 98.4%</span>
+</div>
+<!-- Sub-coordinate badge -->
+<div class="absolute -bottom-5 right-0 bg-surface-container-lowest/80 px-1.5 py-0.5 rounded text-[9px] font-mono text-outline">
+              X: 114.28 Y: 82.10 | Ø 420μm
+            </div>
+</div>
+</div>
+<!-- Dynamic Overlay: Defect 2 - Recoater Streaking (Amber Striped Box along horizontal path) -->
+<div class="defect-marker absolute top-[18%] left-[10%] w-[78%] h-[12%] pointer-events-auto cursor-pointer transition-all duration-200" id="bbox-defect-2">
+<div class="relative w-full h-full bg-secondary-container/15 rounded-sm">
+<!-- Diagonal stripes pattern representation -->
+<div class="absolute inset-0 bg-gradient-to-r from-secondary/10 via-transparent to-secondary/10"></div>
+<div class="absolute -top-6 left-2 bg-surface-container-lowest/90 backdrop-blur-md px-2 py-0.5 rounded flex items-center gap-1 shadow-md">
+<span class="h-2 w-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-secondary font-bold font-mono">#02 리코터 줄무늬 결함 (Streak): 94.1%</span>
+</div>
+<div class="absolute -bottom-5 left-2 bg-surface-container-lowest/80 px-1.5 py-0.5 rounded text-[9px] font-mono text-secondary-fixed">
+              블레이드 세라믹 팁 마모 의심 (길이: 84.2mm)
+            </div>
+</div>
+</div>
+<!-- Dynamic Overlay: Defect 3 - Lack of Fusion (Cyan Micro Crosshair) -->
+<div class="defect-marker absolute top-[68%] left-[22%] w-[14%] h-[18%] pointer-events-auto cursor-pointer transition-all duration-200" id="bbox-defect-3">
+<div class="relative w-full h-full bg-primary-container/10 rounded-sm">
+<span class="absolute -top-1 -left-1 w-2 h-2 bg-primary-fixed"></span>
+<span class="absolute -bottom-1 -right-1 w-2 h-2 bg-primary-fixed"></span>
+<div class="absolute -top-6 left-0 bg-surface-container-lowest/90 backdrop-blur-md px-2 py-0.5 rounded flex items-center gap-1 shadow-md">
+<span class="h-1.5 w-1.5 rounded-full bg-primary-fixed"></span>
+<span class="font-label-sm text-label-sm text-primary-fixed font-bold font-mono">#03 미용융 (LoF): 89.7%</span>
+</div>
+<div class="absolute -bottom-5 left-0 bg-surface-container-lowest/80 px-1 py-0.5 rounded text-[9px] font-mono text-outline">
+              미용융 포켓 (~140μm)
+            </div>
+</div>
+</div>
+<!-- Live Status Overlay HUD (Bottom Left inside viewer) -->
+<div class="absolute bottom-2 left-2 bg-surface-container-lowest/85 backdrop-blur-md px-space-sm py-1 rounded text-on-surface-variant flex items-center gap-space-sm shadow-md">
+<span class="font-label-sm text-label-sm text-primary-fixed font-mono flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">videocam</span> 60 FPS
+          </span>
+<span class="text-outline">|</span>
+<span class="font-label-sm text-label-sm font-mono">EXP: 820 μs</span>
+<span class="text-outline">|</span>
+<span class="font-label-sm text-label-sm font-mono">FOV: 250 x 250 mm</span>
+</div>
+<!-- Co-registration Coordinate HUD (Bottom Right inside viewer) -->
+<div class="absolute bottom-2 right-2 bg-surface-container-lowest/85 backdrop-blur-md px-space-sm py-1 rounded text-on-surface-variant flex items-center gap-space-xs shadow-md">
+<span class="font-label-sm text-label-sm text-primary font-mono">GALVO SYNC: 0.002° OK</span>
+</div>
+</div>
+<!-- Action Row Below Viewport: Upload / Dropzone & ROI Tools -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs">
+<div class="flex items-center gap-space-xs flex-wrap">
+<button class="px-space-md py-space-xs bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-md text-label-md rounded transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed">select</span>
+<span>관심영역 (ROI) 지정</span>
+</button>
+<button class="px-space-md py-space-xs bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-md text-label-md rounded transition-colors flex items-center gap-1" id="btn-recalibrate">
+<span class="material-symbols-outlined text-[16px] text-primary-container">filter_center_focus</span>
+<span>초점 및 스케일 재보정</span>
+</button>
+<button class="px-space-md py-space-xs bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-md text-label-md rounded transition-colors flex items-center gap-1" id="btn-export-frame">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>현 프레임 TIFF 저장</span>
+</button>
+</div>
+<!-- Custom Dropzone Button for External Metal Powder Bed Photos -->
+<label class="cursor-pointer px-space-md py-space-xs bg-surface-container-highest hover:bg-surface-bright text-primary font-label-md text-label-md rounded transition-all flex items-center gap-1.5 shadow-sm group" for="powder-image-input">
+<span class="material-symbols-outlined text-[18px] text-primary-container group-hover:scale-110 transition-transform">add_photo_alternate</span>
+<span>새 금속 분말 사진 업로드 판별</span>
+<input accept="image/*" class="hidden" id="powder-image-input" type="file"/>
+</label>
+</div>
+</div>
+<!-- RIGHT: AI Agent Real-time Diagnosis & Prescriptive Actions (4 cols) -->
+<div class="xl:col-span-4 flex flex-col gap-space-md">
+<!-- Box 1: Defect Detection Summary & Probability Bars -->
+<div class="bg-surface-container-low p-space-md rounded flex flex-col gap-space-sm shadow-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-primary">analytics</span>
+<span class="font-headline-md text-headline-md text-on-surface">AI 결함 판별 요약</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-error/20 text-error font-label-sm text-label-sm font-bold">감지: 3건</span>
+</div>
+<!-- Summary Chip Row -->
+<div class="grid grid-cols-3 gap-space-xs py-1">
+<div class="bg-surface-container p-space-xs rounded text-center">
+<span class="font-label-sm text-label-sm text-outline block">치명적(Critical)</span>
+<span class="font-label-lg text-label-lg font-bold text-error">1건</span>
+</div>
+<div class="bg-surface-container p-space-xs rounded text-center">
+<span class="font-label-sm text-label-sm text-outline block">주의(Warning)</span>
+<span class="font-label-lg text-label-lg font-bold text-secondary">1건</span>
+</div>
+<div class="bg-surface-container p-space-xs rounded text-center">
+<span class="font-label-sm text-label-sm text-outline block">경미(Minor)</span>
+<span class="font-label-lg text-label-lg font-bold text-primary-fixed">1건</span>
+</div>
+</div>
+<!-- Probabilistic Defect Classification Bars -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<!-- 1. Balling Effect -->
+<div class="flex flex-col gap-1 p-space-xs rounded bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">볼링 현상 (Balling Effect)</span>
+<span class="font-label-md text-label-md font-bold text-error font-mono">98.4% [위험]</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-error h-full rounded-full transition-all duration-500" style="width: 98.4%"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">원인: 스캔 속도 초과로 인한 Rayleigh 분열 및 용융 풀 표면장력 불균형</span>
+</div>
+<!-- 2. Recoater Streaking -->
+<div class="flex flex-col gap-1 p-space-xs rounded bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">리코터 줄무늬 (Recoater Streak)</span>
+<span class="font-label-md text-label-md font-bold text-secondary font-mono">94.1% [주의]</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full transition-all duration-500" style="width: 94.1%"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">원인: 블레이드 가장자리 분말 뭉침 또는 세라믹 블레이드 미세 노치 마모</span>
+</div>
+<!-- 3. Lack of Fusion / Porosity -->
+<div class="flex flex-col gap-1 p-space-xs rounded bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">미용융 / 기공 (Lack of Fusion)</span>
+<span class="font-label-md text-label-md font-bold text-primary-fixed-dim font-mono">89.7% [주의]</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-primary-fixed-dim h-full rounded-full transition-all duration-500" style="width: 89.7%"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">원인: 에너지 밀도 국소 부족 (Volumetric Energy Density &lt; 55 J/mm³)</span>
+</div>
+<!-- 4. Spatter Contamination -->
+<div class="flex flex-col gap-1 p-space-xs rounded bg-surface-container hover:bg-surface-container-high transition-colors opacity-70">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface">스패터 비산 오염 (Spatter Fall)</span>
+<span class="font-label-md text-label-md font-mono text-outline">24.2% [정상]</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-outline h-full rounded-full" style="width: 24.2%"></div>
+</div>
+</div>
+<!-- 5. Delamination -->
+<div class="flex flex-col gap-1 p-space-xs rounded bg-surface-container hover:bg-surface-container-high transition-colors opacity-70">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface">층간 박리 (Delamination)</span>
+<span class="font-label-md text-label-md font-mono text-outline">4.1% [정상]</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-outline h-full rounded-full" style="width: 4.1%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Box 2: AI Autonomous Prescriptive Control Actions -->
+<div class="bg-surface-container-low p-space-md rounded flex flex-col gap-space-sm shadow-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed">smart_toy</span>
+<span class="font-headline-md text-headline-md text-on-surface">AI 자율 처방 및 공정 제어 권고</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary-container font-mono uppercase">AUTONOMOUS L3</span>
+</div>
+<!-- Prescriptive Action 1 -->
+<div class="bg-surface-container p-space-sm rounded flex flex-col gap-space-xs">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="flex items-center justify-center w-5 h-5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold">1</span>
+<span class="font-label-md text-label-md font-bold text-primary">스캔 속도 하향 감속</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-mono">-12.5%</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            현재 <strong>1,200 mm/s</strong> 스캔 속도를 <strong>1,050 mm/s</strong>로 즉각 조정하여 용융 풀 안정성을 확보하고 볼링 현상을 억제합니다.
+          </p>
+<button class="action-apply-btn mt-1 w-full py-1.5 px-space-md rounded bg-primary-container hover:bg-primary-fixed text-on-primary-container font-label-md text-label-md font-bold transition-all shadow-sm flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>권고 파라미터 즉각 적용 (-150 mm/s)</span>
+</button>
+</div>
+<!-- Prescriptive Action 2 -->
+<div class="bg-surface-container p-space-sm rounded flex flex-col gap-space-xs">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="flex items-center justify-center w-5 h-5 rounded-full bg-secondary-container text-on-secondary font-label-sm text-label-sm font-bold">2</span>
+<span class="font-label-md text-label-md font-bold text-secondary">리코터 도포 속도 제어</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-mono">-15.0%</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            차기 레이어 분말 재도포 시 리코터 이동 속도를 <strong>80 mm/s</strong>로 감속하고 블레이드 진동 댐퍼를 활성화합니다.
+          </p>
+<button class="action-apply-btn mt-1 w-full py-1.5 px-space-md rounded bg-surface-container-highest hover:bg-surface-bright text-on-surface font-label-md text-label-md font-medium transition-all flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+<span>리코터 설정 큐(Queue) 등록</span>
+</button>
+</div>
+<!-- Emergency E-Stop / Pause Action -->
+<div class="bg-error-container/20 p-space-sm rounded flex flex-col gap-space-xs">
+<div class="flex items-center gap-1.5 text-error">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+<span class="font-label-md text-label-md font-bold">작업자 개입 권고</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-error-container">
+            결함 누적 면적이 임계 허용치(0.5%)를 초과할 경우 레이저 방출을 멈추고 챔버 광학 윈도우 퍼지 상태를 점검하십시오.
+          </p>
+<button class="mt-1 w-full py-2 px-space-md rounded bg-error hover:bg-on-tertiary-container text-white font-label-md text-label-md font-bold transition-all flex items-center justify-center gap-1.5 shadow-lg" id="btn-pause-build">
+<span class="material-symbols-outlined text-[18px]">pause_circle</span>
+<span>공정 즉시 일시 중지 (Pause Build)</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= BOTTOM SECTION: LAYER HISTORY & ANOMALY TREND ================= -->
+<section class="bg-surface-container-low p-space-md rounded flex flex-col gap-space-md shadow-md">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-primary">timeline</span>
+<div>
+<span class="font-headline-md text-headline-md text-on-surface">시계열 결함 위험도 추이 및 레이어 이력</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">최근 5개 레이어 분말 도포 상태 및 이상치(Anomaly Score) 급등 트렌드</span>
+</div>
+</div>
+<!-- Export & Integration Actions -->
+<div class="flex items-center gap-space-xs flex-wrap">
+<button class="px-space-md py-space-xs bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-md text-label-md rounded transition-colors flex items-center gap-1" id="btn-export-pdf">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed">picture_as_pdf</span>
+<span>PDF 종합 진단서</span>
+</button>
+<button class="px-space-md py-space-xs bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-md text-label-md rounded transition-colors flex items-center gap-1" id="btn-export-csv">
+<span class="material-symbols-outlined text-[16px] text-secondary">table_view</span>
+<span>검사 CSV 내보내기</span>
+</button>
+<button class="px-space-md py-space-xs bg-primary-container text-on-primary-container font-label-md text-label-md font-bold rounded transition-colors flex items-center gap-1 shadow-sm" id="btn-qa-sign">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>품질 인증서 발급 연동</span>
+</button>
+</div>
+</div>
+<!-- Timeline Grid: 5 Layer Thumbnails + Anomaly Trend Sparkline -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md items-center">
+<!-- 5 Layer History Tiles (7 cols) -->
+<div class="lg:col-span-7 grid grid-cols-5 gap-space-xs">
+<!-- Layer #1424 -->
+<div class="bg-surface-container p-space-xs rounded flex flex-col gap-1 cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-mono text-outline">#1424</span>
+<span class="h-1.5 w-1.5 rounded-full bg-primary-fixed"></span>
+</div>
+<div class="w-full aspect-[4/3] bg-surface-container-lowest rounded overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-bright/20 to-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] text-outline">image</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-[10px] font-mono">
+<span class="text-primary-fixed">정상 (Nominal)</span>
+<span class="text-outline">0건</span>
+</div>
+</div>
+<!-- Layer #1425 -->
+<div class="bg-surface-container p-space-xs rounded flex flex-col gap-1 cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-mono text-outline">#1425</span>
+<span class="h-1.5 w-1.5 rounded-full bg-primary-fixed"></span>
+</div>
+<div class="w-full aspect-[4/3] bg-surface-container-lowest rounded overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-bright/20 to-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] text-outline">image</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-[10px] font-mono">
+<span class="text-primary-fixed">정상 (Nominal)</span>
+<span class="text-outline">0건</span>
+</div>
+</div>
+<!-- Layer #1426 -->
+<div class="bg-surface-container p-space-xs rounded flex flex-col gap-1 cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-mono text-outline">#1426</span>
+<span class="h-1.5 w-1.5 rounded-full bg-secondary"></span>
+</div>
+<div class="w-full aspect-[4/3] bg-surface-container-lowest rounded overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-br from-secondary/20 to-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] text-secondary">tune</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-[10px] font-mono">
+<span class="text-secondary">미세 스패터</span>
+<span class="text-secondary font-bold">1건</span>
+</div>
+</div>
+<!-- Layer #1427 -->
+<div class="bg-surface-container p-space-xs rounded flex flex-col gap-1 cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-mono text-outline">#1427</span>
+<span class="h-1.5 w-1.5 rounded-full bg-secondary"></span>
+</div>
+<div class="w-full aspect-[4/3] bg-surface-container-lowest rounded overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-br from-secondary/25 to-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] text-secondary">reorder</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-[10px] font-mono">
+<span class="text-secondary">줄무늬 조짐</span>
+<span class="text-secondary font-bold">1건</span>
+</div>
+</div>
+<!-- Layer #1428 (Current Target Layer) -->
+<div class="bg-surface-container-highest p-space-xs rounded flex flex-col gap-1 cursor-pointer ring-1 ring-error relative shadow-lg">
+<div class="absolute -top-2 left-1/2 -translate-x-1/2 bg-error text-white text-[8px] font-mono font-bold px-1.5 rounded-full">
+            CURRENT
+          </div>
+<div class="flex items-center justify-between mt-1">
+<span class="font-label-sm text-label-sm font-mono text-error font-bold">#1428</span>
+<span class="h-2 w-2 rounded-full bg-error animate-ping"></span>
+</div>
+<div class="w-full aspect-[4/3] bg-surface-container-lowest rounded overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-br from-error/30 to-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px] text-error">warning</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-[10px] font-mono">
+<span class="text-error font-bold">볼링/줄무늬</span>
+<span class="text-error font-bold">3건</span>
+</div>
+</div>
+</div>
+<!-- Trend Sparkline Visualization (5 cols) -->
+<div class="lg:col-span-5 bg-surface-container p-space-md rounded flex flex-col justify-between h-full">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">이상 탐지 점수 (Anomaly Score Jump)</span>
+<span class="font-label-md text-label-md font-mono text-error font-bold">12% → 78% (▲66%p)</span>
+</div>
+<!-- Inline SVG Sparkline -->
+<div class="relative w-full h-16 my-1">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 300 60">
+<defs>
+<lineargradient id="trendGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#ffb4ab" stop-opacity="0.4"></stop>
+<stop offset="100%" stop-color="#ffb4ab" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Baseline Grid Marks -->
+<line stroke="#31353e" stroke-dasharray="2 2" stroke-width="0.5" x1="0" x2="300" y1="15" y2="15"></line>
+<line stroke="#31353e" stroke-dasharray="2 2" stroke-width="0.5" x1="0" x2="300" y1="45" y2="45"></line>
+<!-- Area Fill -->
+<polygon fill="url(#trendGradient)" points="10,50 75,52 145,44 215,38 290,10 290,58 10,58"></polygon>
+<!-- Trend Line -->
+<polyline fill="none" points="10,50 75,52 145,44 215,38 290,10" stroke="#ffb4ab" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></polyline>
+<!-- Data Points -->
+<circle cx="10" cy="50" fill="#7df4ff" r="3"></circle>
+<circle cx="75" cy="52" fill="#7df4ff" r="3"></circle>
+<circle cx="145" cy="44" fill="#ffb95f" r="3"></circle>
+<circle cx="215" cy="38" fill="#ffb95f" r="3"></circle>
+<!-- Pulsing Current Alert Node -->
+<circle class="animate-pulse" cx="290" cy="10" fill="#ffb4ab" r="5"></circle>
+<circle cx="290" cy="10" fill="#690005" r="2"></circle>
+</svg>
+</div>
+<div class="flex items-center justify-between text-[11px] font-mono text-outline">
+<span>L#1424 (12%)</span>
+<span>L#1425 (9%)</span>
+<span>L#1426 (22%)</span>
+<span>L#1427 (31%)</span>
+<span class="text-error font-bold">L#1428 (78%)</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Client-side Interactive Behavior -->
+<script>
+  (function initLPBFVisionWorkbench() {
+    // 1. Toggle Bounding Boxes Overlay
+    const toggleBBoxesBtn = document.getElementById('toggle-bboxes');
+    const defectMarkers = document.querySelectorAll('.defect-marker');
+    let bboxesVisible = true;
+
+    if (toggleBBoxesBtn) {
+      toggleBBoxesBtn.addEventListener('click', () => {
+        bboxesVisible = !bboxesVisible;
+        defectMarkers.forEach(el => {
+          el.style.display = bboxesVisible ? 'block' : 'none';
+        });
+        if (bboxesVisible) {
+          toggleBBoxesBtn.classList.remove('bg-surface-container-high', 'text-on-surface');
+          toggleBBoxesBtn.classList.add('bg-primary-container', 'text-on-primary-container');
+          toggleBBoxesBtn.querySelector('span:last-child').textContent = 'AI 결함 바운딩 박스 ON';
+        } else {
+          toggleBBoxesBtn.classList.remove('bg-primary-container', 'text-on-primary-container');
+          toggleBBoxesBtn.classList.add('bg-surface-container-high', 'text-on-surface');
+          toggleBBoxesBtn.querySelector('span:last-child').textContent = 'AI 결함 바운딩 박스 OFF';
+        }
+      });
+    }
+
+    // 2. Toggle Thermal IR Overlay Mode
+    const toggleThermalBtn = document.getElementById('toggle-thermal');
+    const thermalOverlay = document.getElementById('thermal-ir-overlay');
+    let thermalActive = false;
+
+    if (toggleThermalBtn && thermalOverlay) {
+      toggleThermalBtn.addEventListener('click', () => {
+        thermalActive = !thermalActive;
+        if (thermalActive) {
+          thermalOverlay.style.opacity = '0.9';
+          toggleThermalBtn.classList.remove('bg-surface-container-high');
+          toggleThermalBtn.classList.add('bg-secondary-container', 'text-on-secondary');
+        } else {
+          thermalOverlay.style.opacity = '0';
+          toggleThermalBtn.classList.remove('bg-secondary-container', 'text-on-secondary');
+          toggleThermalBtn.classList.add('bg-surface-container-high');
+        }
+      });
+    }
+
+    // 3. Zoom Factor Handling
+    const imgFeed = document.getElementById('layer-feed-img');
+    const zoom100 = document.getElementById('zoom-100');
+    const zoom200 = document.getElementById('zoom-200');
+    const zoom400 = document.getElementById('zoom-400');
+    const zoomBtns = [zoom100, zoom200, zoom400];
+
+    function applyZoom(scale, activeBtn) {
+      if (imgFeed) {
+        imgFeed.style.transform = `scale(${scale})`;
+      }
+      zoomBtns.forEach(btn => {
+        if (btn) {
+          btn.classList.remove('text-primary-fixed', 'font-bold');
+          btn.classList.add('text-on-surface-variant');
+        }
+      });
+      if (activeBtn) {
+        activeBtn.classList.remove('text-on-surface-variant');
+        activeBtn.classList.add('text-primary-fixed', 'font-bold');
+      }
+    }
+
+    if (zoom100) zoom100.addEventListener('click', () => applyZoom(1.0, zoom100));
+    if (zoom200) zoom200.addEventListener('click', () => applyZoom(1.8, zoom200));
+    if (zoom400) zoom400.addEventListener('click', () => applyZoom(2.8, zoom400));
+
+    // 4. One-Click Parameter Adjustment Micro-feedback
+    const actionBtns = document.querySelectorAll('.action-apply-btn');
+    actionBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const originalText = this.innerHTML;
+        this.innerHTML = `<span class="material-symbols-outlined text-[16px] animate-spin">refresh</span><span>적용 중 (Galvo/PLC 동기화)...</span>`;
+        this.disabled = true;
+        setTimeout(() => {
+          this.innerHTML = `<span class="material-symbols-outlined text-[16px]">check</span><span>적용 완료 (ACK 수신)</span>`;
+          this.classList.remove('bg-primary-container', 'text-on-primary-container');
+          this.classList.add('bg-primary', 'text-on-primary');
+          setTimeout(() => {
+            this.innerHTML = originalText;
+            this.disabled = false;
+            this.classList.remove('bg-primary', 'text-on-primary');
+            this.classList.add('bg-primary-container', 'text-on-primary-container');
+          }, 3500);
+        }, 1200);
+      });
+    });
+
+    // 5. Pause Build Emergency Button Trigger
+    const pauseBuildBtn = document.getElementById('btn-pause-build');
+    if (pauseBuildBtn) {
+      pauseBuildBtn.addEventListener('click', () => {
+        const confirmPause = confirm('경고: 레이어 #1,428 빌드를 즉시 일시 정지하고 파이버 레이저 셔터를 폐쇄하시겠습니까?');
+        if (confirmPause) {
+          pauseBuildBtn.innerHTML = `<span class="material-symbols-outlined text-[18px]">lock</span><span>빌드 정지됨 (PAUSED) - 챔버 대기</span>`;
+          pauseBuildBtn.classList.replace('bg-error', 'bg-surface-bright');
+        }
+      });
+    }
+
+    // 6. External Powder Image File Drag & Drop Feedback
+    const powderInput = document.getElementById('powder-image-input');
+    if (powderInput && imgFeed) {
+      powderInput.addEventListener('change', function(e) {
+        if (this.files && this.files[0]) {
+          const reader = new FileReader();
+          reader.onload = function(evt) {
+            imgFeed.src = evt.target.result;
+            alert(`[AI 분석 완료] 신규 분말 표면 이미지 로드 완료.\nAI 추론 모델: YOLOv9-LPBF-Met9\n결함 후보 2건이 재식별되었습니다.`);
+          };
+          reader.readAsDataURL(this.files[0]);
+        }
+      });
+    }
+
+    // 7. Quick banner dismiss
+    const dismissBtn = document.getElementById('btn-quick-dismiss');
+    if (dismissBtn) {
+      dismissBtn.addEventListener('click', () => {
+        dismissBtn.closest('section > div').style.display = 'none';
+      });
+    }
+  })();
+</script></main></div></body></html>
